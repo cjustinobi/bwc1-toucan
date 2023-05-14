@@ -1,6 +1,6 @@
 import { providers, Contract } from 'ethers'
 import axios  from 'axios'
-import GreenProduct from '../../hardhat/artifacts/contracts/GreenProduct.sol/GreenProduct.json'
+import GreenProduct from '../GreenProduct.json'
 
 export const contractAddress = '0x0976833ca8F68b7453e59Ae3bb3bf871a174D09e'
 
