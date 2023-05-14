@@ -39,7 +39,7 @@ export default function Home(): JSX.Element {
         }
 
       </div>
-      <CarbonOffsets getNFTHandler={getNftHandler()} />
+      <CarbonOffsets getNftHandler={getNftHandler()} />
     </div>
   )
 }
