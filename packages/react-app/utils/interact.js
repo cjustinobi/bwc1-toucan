@@ -6,29 +6,19 @@ export const contractAddress = '0x0976833ca8F68b7453e59Ae3bb3bf871a174D09e'
 
 export async function getContract() {
 
-  let auctionContract
+  let contract
 
   try {
     const { ethereum } = window
 
     const provider = new providers.Web3Provider(ethereum)
     const signer = provider.getSigner()
-    auctionContract = new Contract(contractAddress, GreenProduct.abi, signer)
+    contract = new Contract(contractAddress, GreenProduct.abi, signer)
 
   } catch (error) {
     console.log("ERROR:", error)
   }
-  return auctionContract
-}
-
-export const createNFT = async (NFTURI, price) => {
-  try {
-    const contract = await getContract()
-    const res = await contract.createNFT(NFTURI, price)
-    return await res.wait()
-  } catch (e) {
-    console.log(e)
-  }
+  return contract
 }
 
 export const issueNFT = async (retireCount) => {
