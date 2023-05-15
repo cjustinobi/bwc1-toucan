@@ -26,7 +26,10 @@ module.exports = {
         "citrus": "#FF9A51",
         "lotus": "#FFA3EB",
         "lavender": "#B490FF"
-      }
+      },
+      borderGradient: {
+        'blue-green': 'linear-gradient(180deg, #1F7FF0 50%, #38B081 40%)',
+      },
     },
   },
   plugins: [

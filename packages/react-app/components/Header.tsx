@@ -1,11 +1,12 @@
-import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Disclosure } from "@headlessui/react"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
+import Link from 'next/link'
 import Image from "next/image";
 
 export default function Header() {
     return (
-      <Disclosure as="nav" className="bg-prosperity border-b border-black">
+      <Disclosure as="nav" className="bg-[#1e1e1e] border-b border-black">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -22,15 +23,18 @@ export default function Header() {
                   </Disclosure.Button>
                 </div>
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div className="flex flex-shrink-0 items-center">
-                    <Image className="block h-8 w-auto sm:block lg:block" src="/logo.svg" width="24" height="24" alt="Celo Logo" />
+                  <div className="flex flex-shrink-0 items-center text-gray-100">
+                    <Link href="/" className="font-semibold">Green Init</Link>
+                    {/*<Image className="block h-8 w-auto sm:block lg:block" src="/logo.svg" width="24" height="24" alt="Celo Logo" />*/}
                   </div>
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                     <a
-                      href="#"
-                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
+                      href="https://faucet.toucan.earth/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-100"
                     >
-                      Home
+                      Get Faucet
                     </a>
                     
                   </div>
