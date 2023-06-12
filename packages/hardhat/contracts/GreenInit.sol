@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract GreenProduct is
+contract GreenInit is
     ERC721,
     ERC721Enumerable,
     ERC721URIStorage
@@ -18,11 +18,10 @@ contract GreenProduct is
     mapping(address => bool) public userMinted;
 
 
-    constructor() ERC721("GreenProduct", "GP") {}
+    constructor() ERC721("GreenInitiative", "GNT") {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return
-            "https://ipfs.io/ipfs/QmPc2Yp3YeS8JWnrq7eHJp5LBnDPdyM3A2TJFiGPFKhnfH/";
+        return "https://ipfs.io/ipfs/QmPc2Yp3YeS8JWnrq7eHJp5LBnDPdyM3A2TJFiGPFKhnfH/";
     }
 
     // The following functions are overrides required by Solidity.
@@ -35,21 +34,13 @@ contract GreenProduct is
         return super.tokenURI(tokenId);
     }
 
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
-        {
-            return super.supportsInterface(interfaceId);
-        }
+    function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
 
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
-        internal
-        override(ERC721, ERC721Enumerable)
-        {
-            super._beforeTokenTransfer(from, to, tokenId, batchSize);
-        }
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize) internal override(ERC721, ERC721Enumerable) {
+        super._beforeTokenTransfer(from, to, tokenId, batchSize);
+    }
 
     function issueNFT(address _nftAddress, uint256 _retireCounts) public {
 
